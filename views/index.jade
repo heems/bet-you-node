@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1 Node Login
+  - if (user_id)
+    a(href='/logout') Logout
+  - else
+    a(href='/login') Login
+  br
+  a(href='/signup') Signup

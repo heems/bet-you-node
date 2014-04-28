@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	h1= title 
+	if message.length > 0
+		p #{message}
+	form(name="login", method="post", action="/users/login")
+		input(type="text", placeholder="username", name="username") 
+		br
+		input(type="text", placeholder="password", name="password") 
+		br
+		button(type="submit") submit
+
