@@ -3,7 +3,8 @@ extends layout
 block content
   h1 Bets
   each bet in bets
-    h2 #{bet.title}
-    p #{bet.des}
+    a(href='/bets/' + bet._id) 
+      h2 #{bet.name}
+    p #{bet.description}
     br
 
