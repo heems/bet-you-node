@@ -1,6 +1,9 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Lato', sans-serif;
+  color: #E25D33;
+  background-color: #F1A38A;
+
 }
 
 a {
@@ -13,11 +16,13 @@ a {
 
 .splash {
   text-align: center;
-  margin: 0 auto;
+  padding-top: 100px;
 }
 
 .splash h1 {
-  padding-bottom: 50px;
+  padding-bottom: 104px;
+  font-size: 104px;
+  font-family: 'Lobster', cursive;
 }
 
 .splash .btn {
@@ -25,7 +30,6 @@ a {
   margin-right: 15px;
   padding: 20px 50px;
   font-size: 24px;
-  border-radius: 6px
+  border-radius: 6px;
+  background-color: #E25D33;
 }
-
-	

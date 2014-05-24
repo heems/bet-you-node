@@ -10,7 +10,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Express', user_id: req.session.user_id });
+  res.render('index', { title: 'Bet You Cant', user_id: req.session.user_id });
 });
 
 router.get('/signup', function(req, res) {
