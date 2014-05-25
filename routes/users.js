@@ -21,7 +21,15 @@ router.post('/new', function(req, res) {
 		} 
 
 		user.save(function(err){
-			if(err) return next(err);
+			if(err){
+				console.log(err);
+				var errors = [];
+				for (var error in err.errors){
+					errors.push(err.errors[error].message.substring(5));
+				}
+				req.flash('signupMessage', errors);
+				return res.redirect('/signup');
+			}
 			req.session.user_id = user.id;
 			res.redirect('/');
 		});

@@ -1,13 +1,21 @@
 extends layout
 
 block content
-	h1= title 
-	.error
-		p #{message}
-	form(name="newuser", method="post", action="/users/new")
-		input(type="text", placeholder="username", name="username") 
-		br
-		input(type="password", placeholder="password", name="password") 
-		br
-		button(type="submit") submit
-
+  .splash
+    h2= title
+    .error
+      //-p #{message}
+      - if (typeof(message) !== 'undefined'){
+        each err in message
+          p= err
+      - }
+    form(name="newuser", method="post", action="/users/new")
+      br
+      p Username
+      input.form-control(type="text", placeholder="username", name="username") 
+      p Password
+      input.form-control(type="password", placeholder="password", name="password") 
+      br
+      br
+      button.btn.btn-default(type="submit") submit
+  

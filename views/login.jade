@@ -6,19 +6,12 @@ block content
     if message.length > 0
       p #{message}
     form(name="login", method="post", action="/users/login", class="form")
+      br
+      p Username
       input.form-control(type="text", placeholder="username", name="username") 
       br
+      p Password
       input.form-control(type="password", placeholder="password", name="password") 
       br
+      br
       button.btn.btn-default(type="submit") submit
-    form(name="login", method="post", action="/users/login", role='form')
-      .form-group
-        label(for='username') Username
-        br
-        input#username.form-control(type='text', name="username", placeholder='Enter username')
-      .form-group
-        label(for='password') Password
-        br
-        input#password.form-control(type='password', name="password", placeholder='Password')
-      button.btn.btn-default(type='submit') Submit
- 

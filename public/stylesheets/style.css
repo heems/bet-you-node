@@ -18,12 +18,16 @@ a {
   padding-top: 100px;
 }
 
-.splash label{
+.splash p {
   font-size: 24px;
 }
 
+.splash input{
+  margin-bottom: 20px;
+}
+
 h1, h2 {
-  padding-bottom: 104px;
+  padding-bottom: 50px;
   font-size: 104px;
   font-family: 'Lobster', cursive;
 }
@@ -36,8 +40,13 @@ h2 {
 .splash .btn {
   margin-left: 15px;
   margin-right: 15px;
-  padding: 20px 50px;
+	padding: 20px 50px;
   font-size: 24px;
-  border-radius: 6px;
+	border-radius: 6px;
   background-color: #E25D33;
+}
+
+.splash .btn-bets{
+	padding: 50px 150px;
+	margin-bottom: 50px;
 }
