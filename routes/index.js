@@ -28,7 +28,7 @@ router.get('/profile', isLoggedIn, function(req, res) {
 
 router.get('/logout', function(req, res){
 	delete req.session.user_id;
-	res.redirect('/login');
+	res.redirect('/');
 });
 
 function isLoggedIn(req, res, next){

@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1 Bets
+  each bet in bets
+    a(href='/bets/' + bet._id) 
+      h2 #{bet.name}
+    p #{bet.description}
+    br
+

@@ -21,7 +21,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 // connect to db
-mongoose.connect('mongodb://localhost/nodelogin2');
+mongoose.connect('mongodb://localhost/betyoucant');
 
 app.use(favicon());
 app.use(logger('dev'));
