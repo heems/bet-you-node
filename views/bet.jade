@@ -7,9 +7,12 @@ block content
   p Created by #{bet.created_by}
   br
   h2 Responses
+  - for (var i = 0; i < responses.length; i++) {
+    p
+      b Link: 
+      a(href=responses[i].url) #{responses[i].url}
+    p Submitted by #{responses[i].user}
+    br
+  - }
   a(href=path)
     p Submit a new response
-
-
-
-

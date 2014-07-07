@@ -8,5 +8,11 @@ var ResponseSchema = new Schema({
 	bet: {type: String, required: true}
 });
 
+ResponseSchema.pre('save', function(next) {
+	if (this.link.indexOf("http") == -1){
+		this.link = 'http://' + this.link;
+	}
+});
+
 module.exports = mongoose.model('Response', ResponseSchema);
 

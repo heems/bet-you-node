@@ -54,7 +54,7 @@ router.get('/:id', function(req, res){
 			return;
 		}
 		console.log('bet request ' + bet);
-		res.render('bet', {'bet' : bet, 'path': '/bets/' + req.params.id + '/respond'}); 
+		res.render('bet', {'bet' : bet, 'path': '/bets/' + req.params.id + '/respond', 'responses':bet.responses}); 
 	});
 });
 
