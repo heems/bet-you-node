@@ -4,10 +4,10 @@ block content
   .splash
     h1 Bet You Can't
     .span6
-      button.btn.btn-success.btn-bets(href='/bets') Bets
+      a(class='btn btn-bets', href='/bets') Bets
     .span6
       - if (user_id)
-        a(class='btn btn-success', href='/logout') Logout
+        a(class='btn', href='/logout') Logout
       - else
-        a(class='btn btn-success', href='/login') Login
-      a(class='btn btn-success', href='/signup') Signup
+        a(class='btn', href='/login') Login
+        a(class='btn', href='/signup') Signup

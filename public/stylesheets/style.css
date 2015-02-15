@@ -16,6 +16,8 @@ a {
 .splash {
   text-align: center;
   padding-top: 100px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .splash p {
@@ -24,6 +26,8 @@ a {
 
 .splash input{
   margin-bottom: 20px;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 h1, h2 {
@@ -42,6 +46,7 @@ h2 {
   margin-right: 15px;
 	padding: 20px 50px;
   font-size: 24px;
+  color: #FFF;
 	border-radius: 6px;
   background-color: #E25D33;
 }
@@ -49,4 +54,8 @@ h2 {
 .splash .btn-bets{
 	padding: 50px 150px;
 	margin-bottom: 50px;
+}
+
+.bets{
+  height: 120px;
 }

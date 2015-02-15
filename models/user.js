@@ -6,7 +6,6 @@ var SALT_WORK_FACTOR = 10;
 var UserSchema = new Schema({
 	username: {type: String, required: true, index: {unique: true}},
 	password: {type: String, required: true}
-
 });
 
 UserSchema.pre('save', function(next) {
@@ -30,7 +29,8 @@ UserSchema.pre('save', function(next) {
 UserSchema.methods.comparePassword = function(candidatePassword, cb) {
 	bcrypt.compare(candidatePassword, this.password, function(err, isMatch){
 		if(err) return cb(err);
-		cb(null, isMatch); //idk
+		
+		cb(null, isMatch);
 	});
 };
 

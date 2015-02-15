@@ -2,14 +2,9 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/user');
 
-/* GET users listing. */
-router.get('/', function(req, res) {
-  res.send('respond with a resource');
-});
-
 router.post('/new', function(req, res) {
 	var user = new User();
-	console.log(req.body.username);
+
 	user.username = req.body.username;
 	user.password = req.body.password;
 	User.findOne({ username: user.username }, function(err, presentUser){
@@ -22,7 +17,6 @@ router.post('/new', function(req, res) {
 
 		user.save(function(err){
 			if(err){
-				console.log(err);
 				var errors = [];
 				for (var error in err.errors){
 					errors.push(err.errors[error].message.substring(5));
@@ -30,6 +24,7 @@ router.post('/new', function(req, res) {
 				req.flash('signupMessage', errors);
 				return res.redirect('/signup');
 			}
+
 			req.session.user_id = user.id;
 			res.redirect('/');
 		});
@@ -51,14 +46,13 @@ router.post('/login', function(req, res) {
 
 		user.comparePassword(pass, function(err, isMatch){
 			if(err) throw err;
+			
 			if(isMatch){
 				req.session.user_id = user.id;
-				res.redirect('/profile');
-				console.log('swag' + req.session.user_id);
+  				return res.redirect('/');
 			} else {
-				//res.json({ message: 'Password invalid.'});
 				req.flash('loginMessage', 'Password invalid.');
-				res.redirect('/login');
+				return res.redirect('/login');
 			}
 		});
 	});

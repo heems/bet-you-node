@@ -1,3 +1,10 @@
+//  TODO
+//  nav bar partial
+//  voting functionality
+//  make it look prettier
+//  profile pages
+//  payment integration?
+
 var express = require('express');
 var path = require('path');
 var favicon = require('static-favicon');

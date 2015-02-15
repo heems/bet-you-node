@@ -9,9 +9,13 @@ var ResponseSchema = new Schema({
 });
 
 ResponseSchema.pre('save', function(next) {
-	if (this.link.indexOf("http") == -1){
-		this.link = 'http://' + this.link;
-	}
+	/*var ytregex = new RegExp("watch?v=(\d+)");
+	var match = ytregex.exec(this.link);
+	console.log(match);
+*/	this.link = this.link.substring(33);
+	console.log(this.link);
+
+	return next();
 });
 
 module.exports = mongoose.model('Response', ResponseSchema);

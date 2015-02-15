@@ -8,10 +8,16 @@ block content
   br
   h2 Responses
   - for (var i = 0; i < responses.length; i++) {
-    p
-      b Link: 
-      a(href=responses[i].url) #{responses[i].url}
-    p Submitted by #{responses[i].user}
+    .row
+      .col-md-1
+        img(src= "/images/upvote.png", style="width:50px; height:50px; align:top;")
+        p <b>#{responses[i].upvotes}</b>
+      .col-md-6
+        p
+          b Link: 
+          a(href=responses[i].link) View Response
+        <iframe id="ytplayer" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/#{responses[i].link}" frameborder="0"/>
+    p Submitted by <b>#{users[i]}</b>
     br
   - }
   a(href=path)

@@ -3,15 +3,16 @@ extends layout
 block content
   .splash
     h2= title 
-    if message.length > 0
-      p #{message}
-    form(name="login", method="post", action="/users/login", class="form")
-      br
-      p Username
-      input.form-control(type="text", placeholder="username", name="username") 
-      br
-      p Password
-      input.form-control(type="password", placeholder="password", name="password") 
-      br
-      br
-      button.btn.btn-default(type="submit") submit
+    .span6
+      if message.length > 0
+        p #{message}
+      form(name="login", method="post", action="/users/login", class="form")
+        br
+        p Username
+        input.form-control(type="text", placeholder="username", name="username") 
+        br
+        p Password
+        input.form-control(type="password", placeholder="password", name="password") 
+        br
+        br
+        button.btn(type="submit") submit
